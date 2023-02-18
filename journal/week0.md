@@ -1,5 +1,10 @@
 # Week 0 — Billing and Architecture
 ### Install and Verify AWS CLI 
+Was  successfully able to use Gitpod or Github codespaces, prove below 
+
+
+![INSTALLING AWS CLI](Assets/Screenshot 2023-02-18 at 22.50.23.png)
+
 
 
 
