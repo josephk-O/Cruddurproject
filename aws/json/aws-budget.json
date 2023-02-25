@@ -1,9 +1,9 @@
 {
     "BudgetLimit": {
-        "Amount": "100",
+        "Amount": "1",
         "Unit": "USD"
     },
-    "BudgetName": "Crudder Budget",
+    "BudgetName": "Crudder Project Budget",
     "BudgetType": "COST",
     "CostFilters": {
         "TagKeyValue": [
