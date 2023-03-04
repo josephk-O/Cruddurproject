@@ -24,8 +24,8 @@ services:
 
       REACT_APP_AWS_PROJECT_REGION: "${AWS_DEFAULT_REGION}"
       REACT_APP_AWS_COGNITO_REGION: "${AWS_DEFAULT_REGION}"
-      REACT_APP_AWS_USER_POOLS_ID: "us-east-1_aYBmvU8BW"
-      REACT_APP_CLIENT_ID: "kgatb5voa3jbnpnj4ssgf10r2"
+      REACT_APP_AWS_USER_POOLS_ID: "us-east-1_oYBIr6Cqt"
+      REACT_APP_CLIENT_ID: "3l5lngl2h3ujf3pcaffis8nj35"
     build: ./frontend-react-js
     ports:
       - "3000:3000"
