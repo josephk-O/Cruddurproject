@@ -26,4 +26,10 @@ tasks:
     command: |
       export GITPOD_IP=$(curl ifconfig.me)
       source  "$THEIA_WORKSPACE_ROOT/backend-flask/bin/rds-update-sg-rule"
-  
+
+  - name: npm install aws-amplipy    
+    command: |
+      cd THEIA_WORKSPACE_ROOT/frontend-react-js
+      npm i aws-amplify
+
+      
