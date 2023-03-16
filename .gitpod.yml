@@ -29,7 +29,7 @@ tasks:
 
   - name: npm install aws-amplipy    
     command: |
-      cd THEIA_WORKSPACE_ROOT/frontend-react-js
+      cd /workspace/Cruddurproject/frontend-react-js/frontend-react-js
       npm i aws-amplify
 
       
