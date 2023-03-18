@@ -16,4 +16,5 @@ else
   URL=$CONNECTION_URL
 fi
 
+
 psql $URL cruddur < $seed_path
