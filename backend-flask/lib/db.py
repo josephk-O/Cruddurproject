@@ -27,10 +27,8 @@ class Db:
     print("\n")
     print(f'{cyan}SQL STATEMENT-[{title}]-----------{no_color}')    
     print(sql + "\n")
-
   def query_commit_id(self,sql,params):
     self.print_sql('commit with returning', sql)
-
     pattern = r"\bRETURNING\b"
     is_returning_id = re.search(pattern, sql)
     try:
@@ -96,4 +94,5 @@ class Db:
     # print the pgcode and pgerror exceptions
     print ("pgerror:", err.pgerror)
     print ("pgcode:", err.pgcode, "\n")
+    
 db = Db()
