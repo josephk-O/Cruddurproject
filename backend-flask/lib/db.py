@@ -6,7 +6,7 @@ from flask import current_app as app
 
 class Db:
   def __init__(self):
-    self._init_pool()
+    self.init_pool()
 
   def template(self,name):
     template_path = os.path.join(app.root_path,'db','sql',name+'.sql')
@@ -15,7 +15,7 @@ class Db:
     return template_content
 
 
-  def _init_pool(self):
+  def init_pool(self):
     connection_url = os.getenv("CONNECTION_URL")
     self.pool = ConnectionPool(connection_url)
     # we want to commit data such as insert
@@ -39,8 +39,7 @@ class Db:
           returning_id = cur.fetchone()[0]
         conn.commit()  
         if is_returning_id:
-          return returning_id
-    
+          return returning_id   
     except Exception as err:
       self.print_sql_err(err)
   
