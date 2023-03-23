@@ -19,13 +19,15 @@ github:
     addBadge: false
 
 tasks:
-  - name: Check Python 3.11 Install     
-    command: /usr/bin/python3.11 --version
-
   - name: aws rds-update-sg-rule     
     command: |
       export GITPOD_IP=$(curl ifconfig.me)
       source  "$THEIA_WORKSPACE_ROOT/backend-flask/bin/rds-update-sg-rule"
+
+  - name: Check Python 3.11 Install     
+    command: /usr/bin/python3.11 --version
+
+
 
 
       
