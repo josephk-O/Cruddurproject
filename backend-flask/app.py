@@ -175,9 +175,9 @@ def data_messages(message_group_uuid):
 @app.route("/api/messages", methods=['POST','OPTIONS'])
 @cross_origin()
 def data_create_message():
-  #message_group_uuid   = request.json.get('message_group_uuid',None)
-  #user_receiver_handle = request.json.get('handle',None)
-  #message = request.json['message']
+  user_receiver_handle = request.json.get('handle',None)
+  message_group_uuid   = request.json.get('message_group_uuid',None)
+  message = request.json['message']
   access_token = extract_access_token(request.headers)
   try:
     claims = cognito_jwt_token.verify(access_token)
@@ -236,10 +236,6 @@ def data_notifications():
   data = NotificationsActivities.run()
   return data, 200
 
-@app.route("/api/users/@<string:handle>/short", methods=['GET'])
-def data_users_short(handle):
-  data = UsersShort.run(handle)
-  return data, 200
 
 @app.route("/api/activities/@<string:handle>", methods=['GET'])
 #@xray_recorder.capture('activities_users')
@@ -276,7 +272,7 @@ def data_activities():
 @app.route("/api/activities/<string:activity_uuid>", methods=['GET'])
 @xray_recorder.capture('activities_show')
 def data_show_activity(activity_uuid):
-  data = ShowActivity.run(activity_uuid=activity_uuid)
+  data = ShowActivities.run(activity_uuid=activity_uuid)
   return data, 200
 
 @app.route("/api/activities/<string:activity_uuid>/reply", methods=['POST','OPTIONS'])
@@ -290,6 +286,11 @@ def data_activities_reply(activity_uuid):
   else:
     return model['data'], 200
   return
+
+@app.route("/api/users/@<string:handle>/short", methods=['GET'])
+def data_users_short(handle):
+  data = UsersShort.run(handle)
+  return data, 200
 
 
 if __name__ == "__main__":
