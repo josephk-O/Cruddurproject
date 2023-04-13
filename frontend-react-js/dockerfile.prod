@@ -26,3 +26,4 @@ COPY --from=build /frontend-react-js/build /usr/share/nginx/html
 COPY --from=build /frontend-react-js/nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 3000
+
