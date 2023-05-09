@@ -1,3 +1,4 @@
 *.env
 session-manager-plugin.deb
 
+node_modules
