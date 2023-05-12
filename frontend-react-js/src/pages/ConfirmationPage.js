@@ -51,7 +51,7 @@ export default function ConfirmationPage() {
     }
     return false
   }
-  
+
   let el_errors;
   if (errors){
     el_errors = <div className='errors'>{errors}</div>;
